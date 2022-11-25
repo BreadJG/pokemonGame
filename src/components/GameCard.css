@@ -1,0 +1,76 @@
+.GameCard {
+    display: inline-block;
+    width: 160px;
+    height: 260px;
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  
+.GameCardInner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .GameCardBack,
+  .GameCardFront {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 5px;
+      border: 3px solid rgb(27, 21, 201);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      box-sizing: border-box;
+      background-color: aliceblue;
+  }
+  
+  .GameCardBack{
+    background:repeating-linear-gradient(
+      red,
+      pink,
+      white,
+      red
+      
+    )
+    ;
+
+  }
+
+  .GameCardFront {
+    font-size: 30px;
+    line-height: 20px;
+    transform: rotateY(180deg);
+    vertical-align: middle;
+  }
+  
+  .frontInner{
+    font-size: 70%;
+    font-weight: bold;
+    font-family:  copperplate;
+  }
+
+  .pokemonInfo{
+    font-size: 50%;
+    font-family: copperplate;
+  }
+
+  .frontImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+  .CardImage { 
+    width: 80%;
+    margin: 25% 0 0 10%;
+  }
+

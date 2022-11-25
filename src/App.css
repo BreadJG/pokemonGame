@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -28,11 +29,153 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+.cardPattern{
+  background: linear-gradient(45deg,#9893ff 20%, transparent 20%), linear-gradient(135deg, transparent 80%, #9893ff 80%), radial-gradient(#9893ff 20% , transparent 21%);
+  background-size: 3em 3em;
+  background-color: #f9be81;
+  opacity: .6;
+}
+.gameText{
+  font-family: impact;
+  opacity: 1;
+  font-size: 4vh
+}
+
+/* welcome text */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1vh;
+}
+
+.title {
+  font-size: 5vh;
+  font-weight: 500;
+  color: #FFCC00;
+  letter-spacing: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.title:hover {
+  color: #FFCC00;
+  text-shadow: 0 0 5px #FB1B1B,
+              0 0 25px #FB1B1B,
+              0 0 50px #FB1B1B,
+              0 0 100px #FB1B1B;
+}
+ /* other */
+.homeBody{
+  position:fixed
+}
+.pointer{
+  cursor: pointer;
+}
+.pic-ctn {
+  margin: 10%;
+  position: absolute;
+  height: fit-content;
+}
+
+.pic-ctn > img {
+  top:1;
+  left: 50%;
+  opacity: 0;
+  animation: display 12s infinite;
+  position: fixed;
+  width: 45vw;
+}
+
+img:nth-child(2) {
+  animation-delay: 4s;
+}
+img:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.indicator {
+  font-size: 9vw;
+
+}
+.homeNav {
+  background-color: red;
+}
+
+.screenOff{
+  animation-name: TurnOff;
+  animation-duration: 1s;
+}
+
+.screenOn{
+  animation-name: TurnOn;
+  animation-duration: 1s;
+}
+@keyframes TurnOff {
+  0% {
+    transform: scale(1,1);
+    background-color: white;
+  }
+  75% {
+    transform: scale(1,.02);
+    background-color: white;
+  }
+  100% {
+    transform: scale(0,0);
+    background-color: white;
+  }
+}
+
+@keyframes TurnOn {
+  0% {
+    opacity: 25%;
+  }
+  15% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 25%;
+  }
+  75% {
+    opacity: 10%;
+  }
+  100% {
+    opacity: 100;
   }
 }
