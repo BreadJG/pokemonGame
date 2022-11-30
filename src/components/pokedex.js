@@ -4,7 +4,7 @@ import { AppContext } from "../Context/context";
 import { NavLink } from "react-router-dom";
 
 function POKEDEX(){
-    const {SetPokemon, Pokemon} = useContext(AppContext)
+    const {Pokemon} = useContext(AppContext)
     const [Show, SetShow] = useState(false)
 
     const pokemonCards = Pokemon.map((item, i) =>
@@ -19,11 +19,12 @@ function POKEDEX(){
     
     function _logbutton() {
         SetShow(!Show);
+        console.log(Pokemon)
     }
 
     return(
         <div className="text-center" style={{backgroundColor:'red'}}>
-            <img src="https://pokedexproject1.herokuapp.com/images/Pokedex.png"></img>
+            <img src="https://pokedexproject1.herokuapp.com/images/Pokedex.png" alt="logo"></img>
             <br></br>
             <button className="row btn btn-success m-3" onClick={_logbutton}>Power</button>
             <div className="border border-secondary mx-3 rounded mb-3" style={{Height:'25%', backgroundColor:'gray'}}>

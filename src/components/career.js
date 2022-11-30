@@ -4,19 +4,18 @@ import { NavLink } from "react-router-dom";
 
 
 function CAREER(){
-    const {SetPokemon, Pokemon ,Username, Score, Wins, Losses } = useContext(AppContext)
+    const {Username, Score, Wins, Losses } = useContext(AppContext)
     const [Rank, SetRank] = useState('')
 
     useEffect (() => {
         if (Score < 5){
-            SetRank(<img src="https://archives.bulbagarden.net/media/upload/7/79/Dream_Pok%C3%A9_Ball_Sprite.png"></img>)
+            SetRank(<img src="https://archives.bulbagarden.net/media/upload/7/79/Dream_Pok%C3%A9_Ball_Sprite.png" alt="Pokeball"></img>)
         } else if (Score >= 5 && Score < 10){
-            SetRank(<img src="https://archives.bulbagarden.net/media/upload/b/bf/Dream_Great_Ball_Sprite.png"></img>)
-
+            SetRank(<img src="https://archives.bulbagarden.net/media/upload/b/bf/Dream_Great_Ball_Sprite.png" alt="Great Ball"></img>)
         } else if (Score >= 10 && Score < 20){
-            SetRank(<img src="https://archives.bulbagarden.net/media/upload/a/a8/Dream_Ultra_Ball_Sprite.png"></img>)
+            SetRank(<img src="https://archives.bulbagarden.net/media/upload/a/a8/Dream_Ultra_Ball_Sprite.png" alt="Ultra Ball"></img>)
         } else {
-            SetRank (<img src="https://archives.bulbagarden.net/media/upload/9/95/Dream_Master_Ball_Sprite.png"></img>)
+            SetRank (<img src="https://archives.bulbagarden.net/media/upload/9/95/Dream_Master_Ball_Sprite.png" alt="Master Ball"></img>)
         }
     })
     // const rank = () => {

@@ -1,22 +1,32 @@
-import React, { useContext, useEffect } from "react";
+import React, {useContext} from "react";
 import { AppContext } from "../Context/context";
 import { NavLink } from "react-router-dom";
 
 function HOME() {
-    const {LoggedIn, SetLoggedIn ,Username, SetUsername, SetPokemon} = useContext(AppContext)
+    const {LoggedIn, SetLoggedIn ,Username, SetUsername} = useContext(AppContext)
 
-    let fetchpokemon = [];
+    // let fetchpokemon = [];
+    // const [localPokemon, setLocalPokemon] = useState(null)
 
-    useEffect(() => {
-     for (let i = 1; i < 151; i++) {
-        try{
-         fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-         .then((results) => results.json())
-         .then((response) => fetchpokemon.push(response))}
-         catch{alert('Error Loading POKéMON. Please Refresh Page')}
-     }
-     SetPokemon(fetchpokemon)
-     },[]);
+    // useEffect(() => {
+    //     if (localPokemon) {
+    //         SetPokemon(localPokemon)
+    //     }
+    // }, [localPokemon])
+
+    // useEffect(() => {
+    //     console.log("OH LETS GET SOME POKEMON")
+    //     console.log(localPokemon, localPokemon?.length)
+
+    //     if (!localPokemon) { 
+    //         for (let i = 1; i < 151; i++) {  
+    //             fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+    //             .then((results) => results.json())
+    //             .then((response) => fetchpokemon.push(response))
+    //         }
+    //         setLocalPokemon(fetchpokemon)        
+    //     }
+    // },[]);
      
     function LogIn(){
         SetLoggedIn(true)

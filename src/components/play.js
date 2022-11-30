@@ -4,7 +4,7 @@ import { AppContext } from "../Context/context";
 import { NavLink } from "react-router-dom";
 
 function PLAY() {
-    const {SetPokemon, Pokemon, SetScore, Score, Username, SetWins, Wins, SetLosses, Losses} = useContext(AppContext)
+    const {Pokemon, SetScore, Score, Username, SetWins, Wins, SetLosses, Losses} = useContext(AppContext)
     const [FirstCard, SetFirstCard] = useState(0);
     const [SecondCard, SetSecondCard] = useState(0);
     const [GameStart, SetGameStart] = useState(false);
@@ -14,14 +14,11 @@ function PLAY() {
     function randomNumberInRange(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
+    
     function _deal () {
         SetGameStart(true)
         SetFirstCard(randomNumberInRange(1,150));
         SetSecondCard(randomNumberInRange(1,150));
-        while (FirstCard === SecondCard) {
-            SetFirstCard(randomNumberInRange(1,150));
-        }
     }
     
     async function _left() {
